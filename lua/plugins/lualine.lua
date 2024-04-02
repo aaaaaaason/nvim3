@@ -50,4 +50,7 @@ return {
         }
         require('lualine').setup(config)
     end,
+    keys = {
+        { "<leader>t", ":LualineRenameTab ", desc = "rename tab" },
+    },
 }

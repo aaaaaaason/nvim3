@@ -29,5 +29,17 @@ return {
             --     end
             -- },
         }
-    end
+    end,
+    keys = {
+        {
+            "<leader>s",
+            function() require("auto-session.session-lens").search_session() end,
+            desc = "sessions",
+        },
+        {
+            "<leader>x",
+            "<cmd>SessionSave<cr>",
+            desc = "save session",
+        },
+    },
 }

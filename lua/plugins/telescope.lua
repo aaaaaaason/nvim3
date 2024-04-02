@@ -72,20 +72,5 @@ return {
             function() require("telescope.builtin").keymaps() end,
             desc = "keymaps",
         },
-        {
-            "<leader>f",
-            function() require("telescope").extensions.file_browser.file_browser() end,
-            desc = "file browser",
-        },
-        {
-            "<leader>c",
-            function() require("telescope").extensions.file_browser.file_browser({ path = "%:p:h", select_buffer = true }) end,
-            desc = "file browser (current buffer)",
-        },
-        {
-            "<leader>s",
-            function() require("auto-session.session-lens").search_session() end,
-            desc = "session",
-        },
     },
 }
