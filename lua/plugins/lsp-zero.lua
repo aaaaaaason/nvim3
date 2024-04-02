@@ -8,7 +8,11 @@ return {
         lsp_zero.on_attach(function(client, bufnr)
             -- see :help lsp-zero-keybindings
             -- to learn the available actions
-            lsp_zero.default_keymaps({ buffer = bufnr, preserve_mappings = false })
+            lsp_zero.default_keymaps({
+                buffer = bufnr,
+                preserve_mappings = false,
+                exclude = { 'gs' },
+            })
             -- local opts = { buffer = bufnr, remap = false }
             --
             vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', opts)
