@@ -14,6 +14,8 @@ return {
                 theme_conf = { border = true },
                 previewer = false,
             },
+            pre_save_cmds = { 'Neotree close' },
+            -- post_restore_cmds = { 'Neotree filesystem show' },
         }
     end
 }

@@ -9,7 +9,7 @@ return {
     keys = {
         {
             "<leader><leader>",
-            function() require("telescope.builtin").find_files() end,
+            function() require("telescope.builtin").find_files({ find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' } }) end,
             desc = "find files",
         },
         {

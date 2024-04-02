@@ -5,7 +5,7 @@ return {
             -- A list of parser names, or "all" (the five listed parsers should always be installed)
             ensure_installed = {
                 "c", "lua", "vim", "vimdoc", "go", "typescript", "rust", "json", "toml", "yaml", "proto", "make",
-                "python", "sql", "cpp", "bash", "gomod", "gosum", "gotmpl", "graphql", "java", "javascript", "markdown",
+                "python", "sql", "cpp", "bash", "gomod", "gosum", "graphql", "java", "javascript", "markdown",
                 "xml" },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
