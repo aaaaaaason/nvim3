@@ -1,5 +1,5 @@
 return {
-    'rmagatti/auto-session',
+    "rmagatti/auto-session",
     config = function()
         require("auto-session").setup {
             log_level = "error",
@@ -14,8 +14,20 @@ return {
                 theme_conf = { border = true },
                 previewer = false,
             },
-            pre_save_cmds = { 'Neotree close' },
-            -- post_restore_cmds = { 'Neotree filesystem show' },
+            pre_save_cmds = {
+                function()
+                    if vim.fn.exists(":Neotree") > 0 then
+                        vim.cmd("Neotree close")
+                    end
+                end
+            },
+            -- post_restore_cmds = {
+            --     function()
+            --         if vim.fn.exists(":Neotree") > 0 then
+            --             vim.cmd("Neotree toggle reveal")
+            --         end
+            --     end
+            -- },
         }
     end
 }
