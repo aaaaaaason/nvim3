@@ -23,7 +23,7 @@ return {
             desc = "buffers",
         },
         {
-            "<leader>h",
+            "<leader>ht",
             function() require("telescope.builtin").help_tags() end,
             desc = "help tags",
         },

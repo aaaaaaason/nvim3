@@ -11,7 +11,7 @@ return {
             lsp_zero.default_keymaps({
                 buffer = bufnr,
                 preserve_mappings = false,
-                exclude = { 'gs' },
+                exclude = { 'gs', 'gr' },
             })
             -- local opts = { buffer = bufnr, remap = false }
             --
@@ -27,7 +27,7 @@ return {
             -- vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
             -- vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
-            lsp_zero.buffer_autoformat()
+            -- lsp_zero.buffer_autoformat()
         end)
 
         --- if you want to know more about lsp-zero and mason.nvim
@@ -42,7 +42,14 @@ return {
         local cmp = require('cmp')
 
         cmp.setup({
+            sources = {
+                { name = 'nvim_lsp' },
+                { name = 'buffer' },
+            },
             preselect = 'item',
+            completion = {
+                completeopt = 'menu,menuone,noinsert'
+            },
             mapping = cmp.mapping.preset.insert({
                 ['<CR>'] = cmp.mapping.confirm({ select = false }),
                 ['<tab>'] = cmp.mapping.confirm({ select = false }),
