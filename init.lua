@@ -36,8 +36,8 @@ opt.splitbelow = true
 opt.splitright = true
 
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { silent = true, noremap = true })
-vim.keymap.set("n", "[q", vim.cmd.cprev, { silent = true, noremap = true, desc = "cprev" })
-vim.keymap.set("n", "]q", vim.cmd.cnext, { silent = true, noremap = true, desc = "cnext" })
+vim.keymap.set("n", "[q", vim.cmd.cprev, { silent = true, noremap = true, desc = "Prev quickfix item" })
+vim.keymap.set("n", "]q", vim.cmd.cnext, { silent = true, noremap = true, desc = "Next quickfix item" })
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>q", "<cmd>qa!<cr>", { silent = true, noremap = true, desc = "quit" })
 

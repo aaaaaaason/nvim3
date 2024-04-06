@@ -60,7 +60,7 @@ return {
 		},
 		{
 			"<leader>/",
-			function() end,
+			live_grep,
 			desc = "live grep",
 		},
 		{

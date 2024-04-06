@@ -23,5 +23,41 @@ return {
 				mode = "relative", --"'unique'|'relative'|'tail'|'shorten'",
 			},
 		})
+
+		local wk = require("which-key")
+		wk.register({
+			t = {
+				name = "+tabby", -- optional group name
+				-- r = {
+				-- 	"<cmd>TabRename",
+				-- 	"rename tab",
+				-- },
+				p = {
+					"<cmd>Tabby pick_window<cr>",
+					"pick window",
+				},
+				a = { "<cmd>tabnew<cr>", "new tab" },
+				c = { "<cmd>tabclose<cr>", "close tab" },
+				n = { "<cmd>tabn<cr>", "next tab" },
+				p = { "<cmd>tabp<cr>", "prev tab" },
+			},
+		}, { prefix = "<leader>" })
 	end,
+	keys = {
+		{
+			"]t",
+			"<cmd>tabn<cr>",
+			desc = "Next tab",
+		},
+		{
+			"[t",
+			"<cmd>tabp<cr>",
+			desc = "Prev tab",
+		},
+		{
+			"<leader>tr",
+			":Tabby rename_tab ",
+			desc = "rename tab",
+		},
+	},
 }

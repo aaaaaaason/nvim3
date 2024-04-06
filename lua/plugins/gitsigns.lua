@@ -21,7 +21,7 @@ return {
 					else
 						gitsigns.nav_hunk("next")
 					end
-				end, { desc = "next hunk" })
+				end, { desc = "Next hunk" })
 
 				map("n", "[c", function()
 					if vim.wo.diff then
@@ -29,7 +29,7 @@ return {
 					else
 						gitsigns.nav_hunk("prev")
 					end
-				end, { desc = "prev hunk" })
+				end, { desc = "Prev hunk" })
 
 				local wk = require("which-key")
 				wk.register({
