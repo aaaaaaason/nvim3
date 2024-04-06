@@ -3,5 +3,5 @@ return {
     opts = {},
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    -- enabled = false,
+    enabled = false,
 }

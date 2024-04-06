@@ -1,11 +1,14 @@
 return {
-    'nvim-pack/nvim-spectre',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    keys = {
-        {
-            "<leader><S-s>",
-            function() require("spectre").toggle() end,
-            desc = "find & replace",
-        },
-    },
+	"nvim-pack/nvim-spectre",
+	dependencies = { "nvim-lua/plenary.nvim" },
+	config = function()
+		local wk = require("which-key")
+		wk.register({
+			s = {
+				name = "+spectre", -- optional group name
+				s = { "<cmd>lua require('spectre').toggle()<cr>", "spectre" },
+				w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "current word" },
+			},
+		}, { prefix = "<leader>" })
+	end,
 }
