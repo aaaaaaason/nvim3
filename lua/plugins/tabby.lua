@@ -40,6 +40,7 @@ return {
 				c = { "<cmd>tabclose<cr>", "close tab" },
 				n = { "<cmd>tabn<cr>", "next tab" },
 				p = { "<cmd>tabp<cr>", "prev tab" },
+				t = { "<cmd>ToggleTerm<cr>", "new terminal" },
 			},
 		}, { prefix = "<leader>" })
 	end,

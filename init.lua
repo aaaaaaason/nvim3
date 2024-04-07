@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 vim.wo.relativenumber = true
+vim.o.termguicolors = true
 
 vim.g.netrw_keepdir = 0
 vim.g.netrw_banner = 0
@@ -40,5 +41,6 @@ vim.keymap.set("n", "[q", vim.cmd.cprev, { silent = true, noremap = true, desc =
 vim.keymap.set("n", "]q", vim.cmd.cnext, { silent = true, noremap = true, desc = "Next quickfix item" })
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>q", "<cmd>qa!<cr>", { silent = true, noremap = true, desc = "quit" })
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { silent = true, noremap = true, desc = "enter normal mode" })
 
 require("lazy").setup("plugins")

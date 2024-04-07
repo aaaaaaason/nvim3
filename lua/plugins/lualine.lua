@@ -19,7 +19,7 @@ return {
 			},
 		}
 		config.sections.lualine_y = {
-			require('auto-session.lib').current_session_name,
+			require("auto-session.lib").current_session_name,
 		}
 		-- config.sections.lualine_a = {
 		-- 	{

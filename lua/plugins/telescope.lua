@@ -3,12 +3,20 @@ local find_command = { "rg", "--files", "--iglob", "!.git", "--hidden" }
 local find_files = function()
 	require("telescope.builtin").find_files({
 		find_command = find_command,
+		ignore_current_buffer = true,
 	})
 end
 
 local live_grep = function()
 	require("telescope.builtin").live_grep({
 		find_command = find_command,
+	})
+end
+
+local buffers = function()
+	require("telescope.builtin").buffers({
+		sort_mru = true,
+		ignore_current_buffer = true,
 	})
 end
 
@@ -33,8 +41,8 @@ return {
 				name = "+telescope", -- optional group name
 				f = { find_files, "files" },
 				g = { live_grep, "grep" },
+				b = { buffers, "buffers" },
 				s = { "<cmd>Telescope grep_string<cr>", "current string" },
-				b = { "<cmd>Telescope buffers<cr>", "buffers" },
 				o = { "<cmd>Telescope oldfiles<cr>", "old files" },
 				h = { "<cmd>Telescope help_tags<cr>", "help tags" },
 				C = { "<cmd>Telescope command_history<cr>", "command history" },
@@ -53,29 +61,8 @@ return {
 		}, { prefix = "<leader>" })
 	end,
 	keys = {
-		{
-			"<leader> ",
-			find_files,
-			desc = "find files",
-		},
-		{
-			"<leader>/",
-			live_grep,
-			desc = "live grep",
-		},
-		{
-			"<leader>b",
-			function()
-				require("telescope.builtin").buffers()
-			end,
-			desc = "buffers",
-		},
-		{
-			"<leader>r",
-			function()
-				require("telescope.builtin").oldfiles()
-			end,
-			desc = "recent files",
-		},
+		{ "<leader> ", find_files, desc = "find files" },
+		{ "<leader>/", live_grep, desc = "live grep" },
+		{ "<leader>.", buffers, desc = "find buffers" },
 	},
 }
