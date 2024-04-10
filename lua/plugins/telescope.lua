@@ -34,6 +34,18 @@ return {
 					cwd_only = true,
 				},
 			},
+			-- in telescope's config file.
+			extensions = {
+				termfinder = {
+					mappings = {
+						rename_term = "<C-n>",
+						delete_term = "<C-x>",
+						vertical_term = "<C-v>",
+						horizontal_term = "<C-h>",
+						float_term = "<C-f>",
+					},
+				},
+			},
 		})
 		local wk = require("which-key")
 		wk.register({

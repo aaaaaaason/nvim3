@@ -61,12 +61,14 @@ return {
 				g = {
 					function()
 						vim.g.disable_autoformat = not vim.g.disable_autoformat
+						print("autoformat (global) = ", vim.g.disable_autoformat)
 					end,
 					"toggle autoformat (global)",
 				},
 				b = {
 					function()
 						vim.b.disable_autoformat = not vim.b.disable_autoformat
+						print("autoformat (buffer) = ", vim.g.disable_autoformat)
 					end,
 					"toggle autoformat (buffer)",
 				},
