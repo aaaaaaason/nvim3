@@ -1,10 +1,13 @@
 return {
 	"rmagatti/auto-session",
 	config = function()
-		vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+		vim.o.sessionoptions = "globals,blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 		require("auto-session").setup({
 			log_level = "error",
-			auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+			auto_session_suppress_dirs = { "~/Projects", "~/", "~/Downloads", "/" },
+			-- auto_session_enabled = false,
+			-- auto_session_create_enabled = false,
+			-- auto_restore_enabled = true,
 
 			-- ⚠️ This will only work if Telescope.nvim is installed
 			-- The following are already the default values, no need to provide them if these are already the settings you want.
