@@ -49,4 +49,13 @@ return {
 			},
 		}, { prefix = "<leader>" })
 	end,
+	keys = {
+		{
+			"<leader>s",
+			function()
+				require("auto-session.session-lens").search_session()
+			end,
+			desc = "sessions",
+		},
+	},
 }

@@ -1,6 +1,6 @@
 return {
 	"akinsho/toggleterm.nvim",
-	enabled = false,
+	-- enabled = false,
 	version = "*",
 	config = function()
 		require("toggleterm").setup({
@@ -13,7 +13,7 @@ return {
 		})
 	end,
 	keys = {
-		{ "<leader>t", ":toggleterm ", desc = "new terminal" },
+		-- { "<leader>t", ":toggleterm ", desc = "new terminal" },
 		{ "<M-1>", "<cmd>1ToggleTerm<CR>", mode = { "n", "t" }, desc = "Toggle terminal 1" },
 		{ "<M-2>", "<cmd>2ToggleTerm<CR>", mode = { "n", "t" }, desc = "Toggle terminal 2" },
 		{ "<M-3>", "<cmd>3ToggleTerm<CR>", mode = { "n", "t" }, desc = "Toggle terminal 3" },

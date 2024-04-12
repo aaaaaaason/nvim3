@@ -20,6 +20,10 @@ local buffers = function()
 	})
 end
 
+local oldfiles = function()
+	require("telescope.builtin").oldfiles()
+end
+
 return {
 	"nvim-telescope/telescope.nvim",
 	lazy = false,
@@ -54,8 +58,8 @@ return {
 				f = { find_files, "files" },
 				g = { live_grep, "grep" },
 				b = { buffers, "buffers" },
+				o = { oldfiles, "old files" },
 				s = { "<cmd>Telescope grep_string<cr>", "current string" },
-				o = { "<cmd>Telescope oldfiles<cr>", "old files" },
 				h = { "<cmd>Telescope help_tags<cr>", "help tags" },
 				C = { "<cmd>Telescope command_history<cr>", "command history" },
 				S = { "<cmd>Telescope search_history<cr>", "search history" },
@@ -76,5 +80,6 @@ return {
 		{ "<leader> ", find_files, desc = "find files" },
 		{ "<leader>/", live_grep, desc = "live grep" },
 		{ "<leader>.", buffers, desc = "find buffers" },
+		{ "<leader>,", oldfiles, desc = "old files" },
 	},
 }

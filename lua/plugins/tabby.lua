@@ -1,6 +1,7 @@
 return {
 	"nanozuki/tabby.nvim",
 	event = "VimEnter",
+	enabled = false,
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
 		require("tabby.tabline").use_preset("tab_only", {
@@ -46,14 +47,9 @@ return {
 	end,
 	keys = {
 		{
-			"]t",
-			"<cmd>tabn<cr>",
-			desc = "Next tab",
-		},
-		{
-			"[t",
-			"<cmd>tabp<cr>",
-			desc = "Prev tab",
+			"<leader>t",
+			"<cmd>Tabby pick_window<cr>",
+			desc = "tab window",
 		},
 		{
 			"<leader>tr",

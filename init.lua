@@ -23,6 +23,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
 
 local opt = vim.opt
+opt.showtabline = 2
 opt.compatible = false
 opt.hlsearch = true
 opt.incsearch = true
@@ -44,5 +45,7 @@ vim.keymap.set("n", "]q", vim.cmd.cnext, { silent = true, noremap = true, desc =
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>q", "<cmd>qa!<cr>", { silent = true, noremap = true, desc = "quit" })
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { silent = true, noremap = true, desc = "enter normal mode" })
+vim.keymap.set("n", "[t", "<cmd>tabp<cr>", { silent = true, noremap = true, desc = "Prev tab" })
+vim.keymap.set("n", "]t", "<cmd>tabn<cr>", { silent = true, noremap = true, desc = "Next tab" })
 
 require("lazy").setup("plugins")
