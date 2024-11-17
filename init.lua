@@ -21,6 +21,17 @@ vim.g.netrw_liststyle = 3
 vim.g.netrw_preview = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+	['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+	['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+	['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+	['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}
 
 local opt = vim.opt
 opt.showtabline = 2
